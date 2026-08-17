@@ -16,7 +16,7 @@ export default function BuscaPokemon() {
   const [lista, setLista] = useState<Pokemon[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Carrega os Pokémon automaticamente quando a tela abrir
+ 
   useEffect(() => {
     carregarPokemons();
   }, []);
@@ -45,7 +45,6 @@ export default function BuscaPokemon() {
 
         pokemons.push(pokemon);
       }
-
       setLista(pokemons);
     } catch (erro) {
       console.error("Erro ao carregar pokémons:", erro);
@@ -82,8 +81,7 @@ export default function BuscaPokemon() {
           dados.sprites?.front_default,
       };
 
-      // Coloca o pesquisado no começo da lista
-      // e evita Pokémon duplicado
+    
       setLista((prev) => [
         pokemon,
         ...prev.filter((p) => p.id !== pokemon.id),

@@ -27,6 +27,10 @@ export interface Pokemon {
 }
 
 export default function CardPokemon({ pokemon: p }: { pokemon: Pokemon }) {
+// OLHA SÓ O QUE EU DESCOBRI
+// Cada Pokémon vem com o seu tipo, então eu uso esse tipo pra procurar
+// a cor correspondente no CORES e deixar a borda do card combinando com ele!
+// É tipo: Pokémon = "fire" → CORES["fire"] → laranja 
   const cor = CORES[p.tipos[0]] ?? '#A8A878';
   return (
     <View style={[s.card, { borderLeftColor: cor }]}>
